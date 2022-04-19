@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register & Login</title>
+	<!-- <script type="text/javascript">
+		function valid() {
+			var fname = document.getElementById("fname1").value;
+			if(fname === '' || fname === null) {
+				alert("Name empty");
+				return false;
+			}
+			// var pwd = 
+
+		}
+	</script> -->
+</head>
+<body>
+<div>
+	<form action="/save" method="POST">
+		{% csrf_token %}
+		<div>
+			<input type="text" id="fname" name="fname" placeholder="Enter First Name">
+		</div>
+		<div>
+			<input type="text" name="lname" placeholder="Enter Last Name">
+		</div>
+		<div>
+			<input type="text" name="uname" placeholder="Enter User Name">
+		</div>
+		<div>
+			<input type="text" name="email" placeholder="Enter Email">
+		</div>
+		<div>
+			<input type="password"  name="password" placeholder="Enter Password">
+		</div>
+		<div>
+			<input type="password" name="ck_password" placeholder="Reenter Password">
+		</div>
+		
+		<div>
+			<input type="submit" name="submit" >
+		</div>
+	</form>
+</div>
+<div>
+	<form action="/login" method="POST">
+		{% csrf_token %}
+		<div>
+			<input type="text" name="username" placeholder="Username">
+		</div>
+		<div>
+			<input type="password" name="password" placeholder="Password">
+		</div>
+		<div>
+			<input type="submit" name="login" value="Login">
+		</div>
+	</form>
+</div>
+
+<a href="/next">Click to go next</a>
+</body>
+</html>
